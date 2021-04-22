@@ -37,10 +37,12 @@ app.use(express.urlencoded({ extended: false, limit: '20mb' }));
 const VaccinationInfoRouter = require('./vaccinationInfos/routes.config')
 const CovidInfoRouter = require('./covidInfos/routes.config')
 const CovidCenterRouter = require('./covidCenters/routes.config')
+const VaccinePrenotationRouter = require('./vaccinePrenotations/routes.config')
 
 VaccinationInfoRouter.routesConfig(app)
 CovidInfoRouter.routesConfig(app)
 CovidCenterRouter.routesConfig(app)
+VaccinePrenotationRouter.routesConfig(app)
 
 app.listen(3000, function () {
     console.log('app listening at port %s', 3000);

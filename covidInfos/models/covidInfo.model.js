@@ -59,8 +59,7 @@ exports.findLatestByRegion = (region) => {
 exports.getLatest = () => {
 	return new Promise((resolve, reject) => {
 		CovidInfo.find()
-			.sort([['dateInfo', -1], ['_id', -1]])
-			.limit(1)
+			.sort([['dateInfo', -1], ['region', 1]])
 			.exec(function (err, result) {
 				if (err) {
                     reject(err);
